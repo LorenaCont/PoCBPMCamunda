@@ -56,7 +56,7 @@
       <bpmn:incoming>Flow_148i9xo</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_148i9xo" sourceRef="Activity_06i4r05" targetRef="Event_1e2euj3" />
-    <bpmn:serviceTask id="Activity_0hk322z" name="Guarda Info BD" camunda:class="/DemoBPM/src/main/java/com/camunda/demo/DemoBPM/CrearBienvenida.java">
+    <bpmn:serviceTask id="Activity_0hk322z" name="Guarda Info BD" camunda:class="com.camunda.demo.DemoBPM.CrearBienvenida">
       <bpmn:incoming>Flow_0c7y4f9</bpmn:incoming>
       <bpmn:outgoing>Flow_01pg1st</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -128,7 +128,7 @@
       <bpmndi:BPMNShape id="Event_1e2euj3_di" bpmnElement="Event_1e2euj3">
         <dc:Bounds x="972" y="252" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_03r8r6g_di" bpmnElement="Activity_0hk322z">
+      <bpmndi:BPMNShape id="Activity_0o3g10f_di" bpmnElement="Activity_0hk322z">
         <dc:Bounds x="440" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
