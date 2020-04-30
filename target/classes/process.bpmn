@@ -21,7 +21,7 @@
       <bpmn:incoming>SequenceFlow1</bpmn:incoming>
       <bpmn:outgoing>Flow_0ijcjgc</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:sequenceFlow id="Flow_01pg1st" sourceRef="Activity_0hk322z" targetRef="Activity_0mb2h63" />
+    <bpmn:sequenceFlow id="Flow_01pg1st" sourceRef="Activity_0hk322z" targetRef="Activity_16weirb" />
     <bpmn:exclusiveGateway id="Gateway_1dcjiwa" name="¿Es mayor de edad?">
       <bpmn:incoming>Flow_16q4vxe</bpmn:incoming>
       <bpmn:outgoing>Flow_0frsjv8</bpmn:outgoing>
@@ -64,12 +64,9 @@
       <bpmn:incoming>Flow_0ijcjgc</bpmn:incoming>
       <bpmn:outgoing>Flow_01pg1st</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="Flow_16q4vxe" sourceRef="Activity_0mb2h63" targetRef="Gateway_1dcjiwa" />
+    <bpmn:sequenceFlow id="Flow_16q4vxe" sourceRef="Activity_16weirb" targetRef="Gateway_1dcjiwa" />
     <bpmn:sequenceFlow id="Flow_0ijcjgc" sourceRef="Activity_0ga27rj" targetRef="Activity_0hk322z" />
-    <bpmn:serviceTask id="Activity_0mb2h63" name="Registrar BD">
-      <bpmn:extensionElements>
-        <camunda:connector />
-      </bpmn:extensionElements>
+    <bpmn:serviceTask id="Activity_16weirb" name="Registrar Datos en BD Externa" camunda:class="com.camunda.demo.DemoBPM.RegistrarDatos">
       <bpmn:incoming>Flow_01pg1st</bpmn:incoming>
       <bpmn:outgoing>Flow_16q4vxe</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -100,35 +97,26 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_01pg1st_di" bpmnElement="Flow_01pg1st">
-        <di:waypoint x="560" y="120" />
-        <di:waypoint x="660" y="120" />
+        <di:waypoint x="560" y="110" />
+        <di:waypoint x="650" y="110" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_08va5r8_di" bpmnElement="SequenceFlow1">
-        <di:waypoint x="209" y="120" />
-        <di:waypoint x="280" y="120" />
+        <di:waypoint x="209" y="110" />
+        <di:waypoint x="280" y="110" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="337.5" y="110" width="90" height="20" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_16q4vxe_di" bpmnElement="Flow_16q4vxe">
-        <di:waypoint x="760" y="110" />
+        <di:waypoint x="750" y="110" />
         <di:waypoint x="855" y="110" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0ijcjgc_di" bpmnElement="Flow_0ijcjgc">
-        <di:waypoint x="380" y="120" />
-        <di:waypoint x="460" y="120" />
+        <di:waypoint x="380" y="110" />
+        <di:waypoint x="460" y="110" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEventProcessStarted">
-        <dc:Bounds x="173" y="102" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0ga27rj_di" bpmnElement="Activity_0ga27rj">
-        <dc:Bounds x="280" y="80" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_06i4r05_di" bpmnElement="Activity_06i4r05">
         <dc:Bounds x="1040" y="230" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0o3g10f_di" bpmnElement="Activity_0hk322z">
-        <dc:Bounds x="460" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_1dcjiwa_di" bpmnElement="Gateway_1dcjiwa" isMarkerVisible="true">
         <dc:Bounds x="855" y="85" width="50" height="50" />
@@ -151,8 +139,20 @@
           <dc:Bounds x="1221" y="295" width="59" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1tbntu8_di" bpmnElement="Activity_0mb2h63">
-        <dc:Bounds x="660" y="80" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_0o3g10f_di" bpmnElement="Activity_0hk322z">
+        <dc:Bounds x="460" y="70" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ga27rj_di" bpmnElement="Activity_0ga27rj">
+        <dc:Bounds x="280" y="70" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEventProcessStarted">
+        <dc:Bounds x="173" y="92" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="171" y="128" width="40" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1itzarf_di" bpmnElement="Activity_16weirb">
+        <dc:Bounds x="650" y="70" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

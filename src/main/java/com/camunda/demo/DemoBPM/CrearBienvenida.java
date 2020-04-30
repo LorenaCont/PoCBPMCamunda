@@ -1,8 +1,5 @@
 package com.camunda.demo.DemoBPM;
 
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -27,7 +24,7 @@ public class CrearBienvenida implements JavaDelegate {
 	   
 	    
 	    
-	    Calendar fechaNac = Calendar. getInstance();
+	    Calendar fechaNac = Calendar.getInstance();
 	    Calendar fechaActual = Calendar.getInstance();
 	    fechaNac.setTime(fechaNacimiento);
         edad = fechaActual.get(Calendar.YEAR)- fechaNac.get(Calendar.YEAR);
